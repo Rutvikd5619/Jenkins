@@ -1,0 +1,19 @@
+Started by user Rutvik Dhumal
+Running as SYSTEM
+Building in workspace /mnt/j-workspace
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /mnt/j-workspace/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/Rutvikd5619/project.git # timeout=10
+Fetching upstream changes from https://github.com/Rutvikd5619/project.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.50.1'
+ > git fetch --tags --force --progress -- https://github.com/Rutvikd5619/project.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision 96eb732ae2ecba2a5ac64c7396e1d657cf68733e (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 96eb732ae2ecba2a5ac64c7396e1d657cf68733e # timeout=10
+Commit message: "Merge pull request #1 from Rutvikd5619/test-branch"
+ > git rev-list --no-walk 96eb732ae2ecba2a5ac64c7396e1d657cf68733e # timeout=10
+Finished: SUCCESS
