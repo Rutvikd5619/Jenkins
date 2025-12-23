@@ -1,8 +1,0 @@
-Started by user Rutvik Dhumal
-Running as SYSTEM
-Building in workspace /root/.jenkins/workspace/httpd-job
-[httpd-job] $ /bin/sh -xe /mnt/tomcat/apache-tomcat-10.1.50/temp/jenkins2517375538178188150.sh
-+ rm -rf /var/www/html/index.html
-+ cp /mnt/index.html /var/www/html
-+ chmod o+r /var/www/html/index.html
-Finished: SUCCESS
