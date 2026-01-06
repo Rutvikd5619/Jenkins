@@ -1,0 +1,9 @@
+Started by user RutvikD
+Running as SYSTEM
+Building in workspace /root/.jenkins/workspace/parametarized-job
+[parametarized-job] $ /bin/bash /mnt/tomcat/apache-tomcat-10.1.50/temp/jenkins6221446785516913092.sh
+openjdk 25.0.1 2025-10-21 LTS
+OpenJDK Runtime Environment Corretto-25.0.1.9.1 (build 25.0.1+9-LTS)
+OpenJDK 64-Bit Server VM Corretto-25.0.1.9.1 (build 25.0.1+9-LTS, mixed mode, sharing)
+java already installed
+Finished: SUCCESS
