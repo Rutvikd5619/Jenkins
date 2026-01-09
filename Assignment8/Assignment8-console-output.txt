@@ -1,0 +1,53 @@
+Started by user RutvikD
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on slave-1 in /mnt/jenkins-slave/workspace/clone-git-branch-with-parameters
+[Pipeline] {
+[Pipeline] ws
+Running in /mnt/jenkins-slave/repo-clone
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (clean-wsp)
+[Pipeline] cleanWs
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Deferred wipeout is used...
+[WS-CLEANUP] done
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (clone-branch)
+[Pipeline] git
+The recommended git tool is: NONE
+No credentials specified
+Cloning the remote Git repository
+Avoid second fetch
+Checking out Revision 6370e15b51953588e7dcb8891cfc8c7f185e0879 (refs/remotes/origin/2025Q2)
+Commit message: "2025Q2 index.html file"
+First time build. Skipping changelog.
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (deploy)
+[Pipeline] sh
+Cloning repository https://github.com/Rutvikd5619/jenkins-project.git
+ > git init /mnt/jenkins-slave/repo-clone # timeout=10
+Fetching upstream changes from https://github.com/Rutvikd5619/jenkins-project.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.50.1'
+ > git fetch --tags --force --progress -- https://github.com/Rutvikd5619/jenkins-project.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/Rutvikd5619/jenkins-project.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/2025Q2^{commit} # timeout=10
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 6370e15b51953588e7dcb8891cfc8c7f185e0879 # timeout=10
+ > git branch -a -v --no-abbrev # timeout=10
+ > git checkout -b 2025Q2 6370e15b51953588e7dcb8891cfc8c7f185e0879 # timeout=10
++ cp /mnt/jenkins-slave/repo-clone/index.html /var/www/html/
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // ws
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
