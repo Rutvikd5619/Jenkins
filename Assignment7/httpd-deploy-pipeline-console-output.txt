@@ -1,0 +1,35 @@
+Started by user RutvikD
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /root/.jenkins/workspace/httpd-job
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (install-httpd)
+[Pipeline] sh
++ dnf install httpd -y
+Last metadata expiration check: 12:34:39 ago on Wed Jan  7 23:32:23 2026.
+Package httpd-2.4.65-1.amzn2023.0.2.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (deployment)
+[Pipeline] sh
++ echo '<p>This deployment using the jenkins pipeline new job</p>'
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (starting-httpd)
+[Pipeline] sh
++ systemctl restart httpd
+Job for httpd.service failed because the service did not take the steps required by its unit configuration.
+See "systemctl status httpd.service" and "journalctl -xeu httpd.service" for details.
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+ERROR: script returned exit code 1
+Finished: FAILURE
