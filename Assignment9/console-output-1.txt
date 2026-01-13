@@ -1,0 +1,47 @@
+Started by user Rutvik
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /root/.jenkins/workspace/deploy-on-servers
+[Pipeline] {
+[Pipeline] ws
+Running in /mnt/jenkins
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (clone-repo)
+[Pipeline] git
+The recommended git tool is: NONE
+Warning: CredentialId "git-credentials" could not be found.
+Cloning the remote Git repository
+Cloning repository https://github.com/Rutvikd5619/Assignment.git
+ > git init /mnt/jenkins # timeout=10
+Fetching upstream changes from https://github.com/Rutvikd5619/Assignment.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.50.1'
+ > git fetch --tags --force --progress -- https://github.com/Rutvikd5619/Assignment.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/Rutvikd5619/Assignment.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+Avoid second fetch
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+Checking out Revision f3be99c8f6f03c8ce73dba12f09b80c77733b946 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f f3be99c8f6f03c8ce73dba12f09b80c77733b946 # timeout=10
+ > git branch -a -v --no-abbrev # timeout=10
+ > git checkout -b master f3be99c8f6f03c8ce73dba12f09b80c77733b946 # timeout=10
+Commit message: "Initial change"
+First time build. Skipping changelog.
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (deploy-on-servers)
+[Pipeline] sh
++ scp -i /mnt/keys/Test1.pem index.html ec2-user@172.31.4.244:/var/www/html/
+[Pipeline] sh
++ scp -i /mnt/keys/Test1.pem index.html ec2-user@172.31.12.20:/var/www/html/
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // ws
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS

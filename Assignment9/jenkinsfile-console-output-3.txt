@@ -1,0 +1,71 @@
+Started by user Rutvik
+Obtained Jenkinsfile from git https://github.com/Rutvikd5619/Assignment.git
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /root/.jenkins/workspace/deploy-on-servers
+[Pipeline] {
+[Pipeline] ws
+Running in /mnt/jenkins
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /mnt/jenkins/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/Rutvikd5619/Assignment.git # timeout=10
+Fetching upstream changes from https://github.com/Rutvikd5619/Assignment.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.50.1'
+ > git fetch --tags --force --progress -- https://github.com/Rutvikd5619/Assignment.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+Checking out Revision 5497640118829b91904fb5d971b859d90b129c9e (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 5497640118829b91904fb5d971b859d90b129c9e # timeout=10
+Commit message: "file changed"
+ > git rev-list --no-walk da4e6a8fabe499adf0d81d48ecb4b87c8828d515 # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (clone-repo)
+[Pipeline] git
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+Warning: CredentialId "git-credentials" could not be found.
+ > git rev-parse --resolve-git-dir /mnt/jenkins/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/Rutvikd5619/Assignment.git # timeout=10
+Fetching upstream changes from https://github.com/Rutvikd5619/Assignment.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.50.1'
+ > git fetch --tags --force --progress -- https://github.com/Rutvikd5619/Assignment.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+Checking out Revision 5497640118829b91904fb5d971b859d90b129c9e (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 5497640118829b91904fb5d971b859d90b129c9e # timeout=10
+ > git branch -a -v --no-abbrev # timeout=10
+ > git branch -D master # timeout=10
+ > git checkout -b master 5497640118829b91904fb5d971b859d90b129c9e # timeout=10
+Commit message: "file changed"
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (deploy-on-servers)
+[Pipeline] sh
++ scp -i /mnt/keys/Test1.pem index.html ec2-user@172.31.4.244:/var/www/html/
+[Pipeline] sh
++ scp -i /mnt/keys/Test1.pem index.html ec2-user@172.31.12.20:/var/www/html/
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // ws
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
